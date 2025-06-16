@@ -1,0 +1,404 @@
+type: collection.insomnia.rest/5.0
+name: flask biblioteca
+meta:
+  id: wrk_9a0365da4e014b92b5b4ceb71b45aec7
+  created: 1749618154401
+  modified: 1749618154401
+collection:
+  - name: Cliente
+    meta:
+      id: fld_3f73e32f5ca84f4c8505ffdd44a06ca4
+      created: 1749732123532
+      modified: 1750097060728
+      sortKey: -1749732123532
+    children:
+      - url: http://127.0.0.1:8000/client/mostar_usuarios
+        name: Exibir lista cliente
+        meta:
+          id: req_cedc0251afeb4c589667de171bfa947d
+          created: 1749732184293
+          modified: 1750097518452
+          isPrivate: false
+          sortKey: -1749732184293
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/client/loc_matricula/001
+        name: Localizar por matricula
+        meta:
+          id: req_2c721070c7fb48c882539b7fb5e55bc0
+          created: 1749743865884
+          modified: 1750097531248
+          isPrivate: false
+          sortKey: -1749732184193
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/client/add_user
+        name: Cadastrar cliente
+        meta:
+          id: req_915fc498ed1a40afa13fb71285701937
+          created: 1749744049802
+          modified: 1750097544105
+          isPrivate: false
+          sortKey: -1749732184093
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Helena Moraes",
+              "telefone": "11999990008"
+            }
+        parameters:
+          - id: pair_f1b4393135b045daa457a7c7fe95f04c
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/client/editar_user/003
+        name: Alterar dados
+        meta:
+          id: req_1e669b4ccf8446dea40e786780c9a1ba
+          created: 1749745890021
+          modified: 1750097550956
+          isPrivate: false
+          sortKey: -1749732170290
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"nome": "Carla Pereira",
+              "telefone": "11999990003",
+              "livros_alugados": [],
+              "quantia_livros": 0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/client/delete_client/001
+        name: Remover usuário
+        meta:
+          id: req_928c532cf2bc40248c1101625fd03679
+          created: 1749746258770
+          modified: 1750097580971
+          isPrivate: false
+          sortKey: -1749732163388.5
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"nome": "Carla Pereira",
+              "telefone": "11999990003",
+              "livros_alugados": [],
+              "quantia_livros": 0
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Livros
+    meta:
+      id: fld_86bbfc42d7124ed2b63c3ff5f6ce4fd0
+      created: 1749732132113
+      modified: 1750097492998
+      sortKey: -1749732132113
+    children:
+      - url: http://127.0.0.1:8000/livro/localizar_livro/2
+        name: Localiza por ISBN livro
+        meta:
+          id: req_90ad9ebae1f946f1b68a5d7c8f20e2b6
+          created: 1749618157324
+          modified: 1749825420728
+          isPrivate: false
+          sortKey: -1749732156462
+        method: GET
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "matricula": "20456",
+              "nome": "MariSilva",
+              "telefone": "(11) 91234-5678"
+            }
+        parameters:
+          - id: pair_cbc2f8db821e4dc7a33aadb821911fa3
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_9c4ebf4b55124031929863596bfc8f3c
+          - name: User-Agent
+            value: insomnia/11.0.2
+            id: pair_b1d720a554c04c35863b7319086822d7
+          - id: pair_e92e7721b8004b338ff30ed2865171b1
+            name: Authorization
+            value: "Authorization: e19c5e6a-fbd1-4dcb-91b0-0d5a9f31e513"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/livro/localizar
+        name: Exibe lista_ livro
+        meta:
+          id: req_00671da4691c4fe198d173df7867a46c
+          created: 1749729028008
+          modified: 1749825409422
+          isPrivate: false
+          sortKey: -1749732156487
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/livro/deletar_livro/6
+        name: Remover livro
+        meta:
+          id: req_872867d9bdab4d87ad37d58bdcaeb36d
+          created: 1749729167574
+          modified: 1749825473370
+          isPrivate: false
+          sortKey: -1749732156399.5
+        method: DELETE
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "isbn": 7,
+              "titulo": "1984",
+              "autor": "George Orwell",
+              "editora": "Companhia das Letras",
+              "ano_publi": 1949,
+              "disponivel": true,
+              "quantidade": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/livro/editar_livro/6
+        name: Editar livro
+        meta:
+          id: req_cb676022244b43fbab720bad64f25087
+          created: 1749730255557
+          modified: 1749825462043
+          isPrivate: false
+          sortKey: -1749732156418.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "isbn": 6,
+              "titulo": "1984",
+              "autor": "George Orwell",
+              "editora": "Companhia das Letras",
+              "ano_publi": 1949,
+              "disponivel": true,
+              "quantidade": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: 127.0.0.1:8000/livro/adicionar_livro
+        name: Adicionar_livro
+        meta:
+          id: req_5df3b02130144085b8486e4f8d5196c1
+          created: 1749731327388
+          modified: 1749825436239
+          isPrivate: false
+          sortKey: -1749732156437
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "isbn": 7,
+              "titulo": "Memórias Póstumas de Brás Cubas",
+              "autor": "Machado de Assis",
+              "editora": "Garnier",
+              "ano_publi": 1881,
+              "disponivel": true,
+              "quantidade": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: "Biblioteca "
+    meta:
+      id: fld_350f4cecd41943f6a7b63a53aaa324e5
+      created: 1750097220903
+      modified: 1750097441579
+      sortKey: -1750097218967
+    children:
+      - url: 127.0.0.1:8000/biblioteca/livros_disponiveis/
+        name: Livros Disponiveis
+        meta:
+          id: req_998e40bebc274ead85412e7405337d0b
+          created: 1750097220909
+          modified: 1750097251025
+          isPrivate: false
+          sortKey: -1750097218966
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/biblioteca/emprestimo/
+        name: Empréstimo ativos
+        meta:
+          id: req_28d4b67ae11740aa865137dd2d4a74a9
+          created: 1750097220912
+          modified: 1750097458154
+          isPrivate: false
+          sortKey: -1750097218965
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/bilioteca/alugar/003/1
+        name: Alugar livro
+        meta:
+          id: req_66f07273cc8e41e69ba1e34b3c22fddb
+          created: 1750097220914
+          modified: 1750097476680
+          isPrivate: false
+          sortKey: -1750097218964
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:8000/bilioteca/devolver/003/1
+        name: Devolver livro
+        meta:
+          id: req_1909261efa6f45a986ad423f7d9abac9
+          created: 1750097220916
+          modified: 1750097483789
+          isPrivate: false
+          sortKey: -1750097218963
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_fccf7139449436e09182edca27030bce9333493c
+    created: 1749618154407
+    modified: 1749618154407
+environments:
+  name: Base Environment
+  meta:
+    id: env_fccf7139449436e09182edca27030bce9333493c
+    created: 1749618154404
+    modified: 1749618154404
+    isPrivate: false

@@ -49,7 +49,6 @@ clientes = [
         "nome": "Gabriela Rocha",
         "telefone": "11999990007",
         "livros_alugados": [],
-        "quantia_livros": 0
     }
 ]
 
@@ -76,7 +75,6 @@ def alterar_cadastro_cli(matr: str, dados: Cliente):
             user['nome'] = dados.nome
             user['telefone'] = dados.telefone
             user['livros_alugados'] = dados.livros_alugados
-            user['quantia_livros'] = dados.quantia_livros
             return {"Mensagem": "Cadastro atualizado com sucesso!", "Cliente": user}
     return {"Erro": f"Cliente com matrícula {matr} não encontrado."}
 
@@ -92,8 +90,7 @@ def adicionar_usuario(cliente: Cliente):
         "matricula": nova_matricula,
         "nome": cliente.nome,
         "telefone": cliente.telefone,
-        "livros_alugados": [],
-        "quantia_livros": 0
+        "livros_alugados": []
     }
     clientes.append(cliente_dic)
     return {"Mensagem": "Cliente adicionado com sucesso!", "Cliente": cliente_dic}

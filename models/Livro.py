@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class Livro(BaseModel):
-    isbn: int
+    isbn: str
     titulo: str
     autor: str
     editora: str
