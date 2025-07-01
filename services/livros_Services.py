@@ -2,12 +2,12 @@ from models.Livro import Livro
 
 livros = []
 livros = [
-    {"ISBN": 1, "titulo": "Dom Casmurro", "ano_publicacao": 1899, "editora": "Garnier", "autor": "Machado de Assis", "disponivel": True},
-    {"ISBN": 2, "titulo": "O Alquimista", "ano_publicacao": 1988, "editora": "Rocco", "autor": "Paulo Coelho", "disponivel": True},
-    {"ISBN": 3, "titulo": "Capitães da Areia", "ano_publicacao": 1937, "editora": "José Olympio", "autor": "Jorge Amado", "disponivel": True},
-    {"ISBN": 4, "titulo": "Grande Sertão: Veredas", "ano_publicacao": 1956, "editora": "José Olympio", "autor": "João Guimarães Rosa", "disponivel": True},
-    {"ISBN": 5, "titulo": "A Hora da Estrela", "ano_publicacao": 1977, "editora": "José Olympio", "autor": "Clarice Lispector", "disponivel": True},
-    {"ISBN": 6, "titulo": "Memórias Póstumas de Brás Cubas", "ano_publicacao": 1881, "editora": "Garnier", "autor": "Machado de Assis", "disponivel": True}
+    {"ISBN": '1', "titulo": "Dom Casmurro", "ano_publicacao": 1899, "editora": "Garnier", "autor": "Machado de Assis", "disponivel": True},
+    {"ISBN": '2', "titulo": "O Alquimista", "ano_publicacao": 1988, "editora": "Rocco", "autor": "Paulo Coelho", "disponivel": True},
+    {"ISBN": '3', "titulo": "Capitães da Areia", "ano_publicacao": 1937, "editora": "José Olympio", "autor": "Jorge Amado", "disponivel": True},
+    {"ISBN": '4', "titulo": "Grande Sertão: Veredas", "ano_publicacao": 1956, "editora": "José Olympio", "autor": "João Guimarães Rosa", "disponivel": True},
+    {"ISBN": '5', "titulo": "A Hora da Estrela", "ano_publicacao": 1977, "editora": "José Olympio", "autor": "Clarice Lispector", "disponivel": True},
+    {"ISBN": '6', "titulo": "Memórias Póstumas de Brás Cubas", "ano_publicacao": 1881, "editora": "Garnier", "autor": "Machado de Assis", "disponivel": True}
 ]
 '''
     -- CRUD  Livros
@@ -69,7 +69,7 @@ def buscar_Livro_Por_Isbn(isbn:str):
     for livro in livros:
         if livro['ISBN'] == isbn:
             return livro 
-    return None
+    return {"erro":'falhou'}
 
 
 

@@ -117,13 +117,13 @@ def biblioteca():
 
 #alugar livro
 @app.post('/bilioteca/alugar/{matricula}/{isbn}')
-def aluguel(matricula:str, isbn:int):
+def aluguel(matricula:str, isbn:str):
     return biblioteca_Services.alugar_livro(matricula, isbn)
 
 
 #devolver livro
 @app.delete('/bilioteca/devolver/{matricula}/{isbn}')
-def devolver(matricula:str, isbn:int):
+def devolver(matricula:str, isbn:str):
     return biblioteca_Services.devolver_livro(matricula, isbn)
 
 

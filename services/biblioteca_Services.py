@@ -5,7 +5,7 @@ from datetime import date, timedelta, datetime
 
 
 
-def alugar_livro(matricula, isbn):
+def alugar_livro(matricula:str, isbn:str):
     cliente = cliente_Services.localiza_Cliente_Por_Matricula(matricula)
     livro = livros_Services.buscar_Livro_Por_Isbn(isbn)
     if cliente is None:
@@ -19,7 +19,7 @@ def alugar_livro(matricula, isbn):
     hoje = date.today()
     data_entrega = hoje + timedelta(days=7)
     aluguel = {
-        'isbn': livro['ISBN'],
+        'isbn': str(livro['ISBN']),
         'matricula': cliente['matricula'],
         'retirada': hoje.strftime('%d/%m/%Y'),
         'data_entrega': data_entrega.strftime('%d/%m/%Y')
