@@ -49,7 +49,7 @@ def localizar_livro(isbn: str):
 
 
 @app.put('/livro/editar_livro/{isbn}')
-def editar_livro(isbn: int, novos_dados: Livro):
+def editar_livro(isbn: str, novos_dados: Livro):
     return livros_Services.editar(isbn, novos_dados)
 
 

@@ -5,6 +5,6 @@ class Livro(BaseModel):
     titulo: str
     autor: str
     editora: str
-    ano_publi: int
+    ano_publicacao: int
     disponivel: bool = True
     quantidade: int = 1

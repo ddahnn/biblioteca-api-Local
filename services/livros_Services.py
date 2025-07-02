@@ -15,7 +15,7 @@ livros = [
 
 #adiconar
 def adicionar_livro(livro:Livro):
-    if not all ([livro.isbn, livro.ano_publi, livro.autor, livro.titulo]):
+    if not all ([livro.isbn, livro.ano_publicacao, livro.autor, livro.titulo]):
         return {"Mensagem":"Necessario todos os dados para cadastro"}
     
     for livro_loc in livros:
@@ -31,7 +31,7 @@ def adicionar_livro(livro:Livro):
             'titulo': livro.titulo,
             'autor': livro.autor,
             'editora': livro.editora,
-            'ano_publicacao': livro.ano_publi,
+            'ano_publicacao': livro.ano_publicacao,
             'disponivel': livro.disponivel,
             'quantidade': livro.quantidade if livro.quantidade > 0 else 1
         }
@@ -41,13 +41,13 @@ def adicionar_livro(livro:Livro):
 
 
 #Editar localiza livro por ISBN e altera os dados do mesmo
-def editar(isbn, novos_dados: Livro):
+def editar(isbn:str, novos_dados: Livro):
     for livro in livros:
         if livro['ISBN'] == isbn:
             livro['titulo'] = novos_dados.titulo
             livro['autor'] = novos_dados.autor
             livro['editora'] = novos_dados.editora
-            livro['ano_publicacao'] = novos_dados.ano_publi
+            livro['ano_publicacao'] = novos_dados.ano_publicacao
             return {"Mensagem": "Livro atualizado com sucesso!", "Livro": livro}
     return {"Erro": f"Nenhum livro com o ISBN {isbn} foi encontrado."}
 
